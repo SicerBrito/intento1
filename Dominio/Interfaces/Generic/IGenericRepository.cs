@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using Dominio.Entities.GenericEntities;
 
 namespace Dominio.Interfaces.Generic;
-    public interface IGenericRepository<T> where T : BaseEntity{
+    public interface IGenericRepository<T> where T : BaseEntity {
         
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetAllAsync();

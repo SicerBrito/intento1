@@ -1,5 +1,5 @@
 namespace Dominio.Entities.GenericEntities;
-    public class UsuarioRoles : BaseEntity{
+    public class UsuarioRoles : BaseEntity {
         
         // Propiedades
         public int UsuarioId { get; set; }

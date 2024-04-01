@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using Dominio.Entities.GenericEntities;
 
 namespace Dominio.Interfaces.Generic;
-    public interface IUsuarioRoles{
+    public interface IUsuarioRoles {
         
         Task<UsuarioRoles> GetByIdAsync(int idUsua, int idRol);
         Task<IEnumerable<UsuarioRoles>> GetAllAsync();

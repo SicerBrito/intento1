@@ -33,12 +33,12 @@ builder.Services.ConfigureCors(); // Configuración de las cors
 builder.Services.AddAplicacionServices(); // Configuración de la UnitOfWork(repo-interface) y otras cosas mas
 builder.Services.AddJwt(builder.Configuration); // Definir los parametros del JWT para añadir 
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); // Habilitar el AutoMapper
-builder.Services.ConfigureRateLimiting();// Habilitar la configuración del número de peticiones
+builder.Services.ConfigureRateLimiting(); // Habilitar la configuración del número de peticiones
 builder.Services.ConfigureApiVersioning(); // Habilitar las versiones o versionado en el proyecto para las Apis
 
 
 
-builder.Services.AddAuthorization(opts =>{
+builder.Services.AddAuthorization(opts => {
     opts.DefaultPolicy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .AddRequirements(new GlobalVerbRoleRequirement())
@@ -71,9 +71,9 @@ if (app.Environment.IsDevelopment())
 // Activar migraciones pendientes 
 using (var scope = app.Services.CreateScope())
 {
-   var services = scope.ServiceProvider;
-   var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-   try
+    var services = scope.ServiceProvider;
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    try
     {
         var context = services.GetRequiredService<DbAppContext>();
         await context.Database.MigrateAsync();

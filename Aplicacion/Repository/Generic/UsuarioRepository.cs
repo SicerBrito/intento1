@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 
 namespace Aplicacion.Repository.Generic;
-    public class UsuarioRepository : GenericRepository<Usuario>, IUsuario{
+    public class UsuarioRepository : GenericRepository<Usuario>, IUsuario {
 
         private readonly DbAppContext _Context;
         public UsuarioRepository(DbAppContext context) : base(context)
@@ -26,4 +26,5 @@ namespace Aplicacion.Repository.Generic;
                             .Include(u => u.Roles)
                             .FirstOrDefaultAsync(u => u.UserName!.ToLower() == username.ToLower()))!;
         }
+        
     }

@@ -1,5 +1,5 @@
 namespace Dominio.Entities.GenericEntities;
-    public class Rol : BaseEntity{
+    public class Rol : BaseEntity {
         
         // Propiedades
         public string ? Nombre { get; set; }

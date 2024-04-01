@@ -15,7 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions;
 
-    public static class ApplicationServiceExtension{
+    public static class ApplicationServiceExtension {
 
         public static void ConfigureCors(this IServiceCollection services) =>
             services.AddCors(options => {
@@ -88,7 +88,7 @@ namespace API.Extensions;
 
         }
 
-        // Control de versiones de Apis (Ver versiones de las Apis creadas o Enpoints)
+        // Control de versiones de APIS (Ver versiones de las APIS creadas o Enpoints)
         public static void ConfigureApiVersioning(this IServiceCollection services)
         {
             services.AddApiVersioning(options => {

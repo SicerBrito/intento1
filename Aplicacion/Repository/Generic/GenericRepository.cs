@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 
 namespace Aplicacion.Repository.Generic;
-    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity{
+    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity {
 
         private readonly DbAppContext _Context;
 

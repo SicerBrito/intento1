@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 
 namespace Aplicacion.Repository.Generic;
-    public class UsuarioRolesRepository : IUsuarioRoles{
+    public class UsuarioRolesRepository : IUsuarioRoles {
 
         private readonly DbAppContext _Context;
 
@@ -14,7 +14,7 @@ namespace Aplicacion.Repository.Generic;
             _Context = context;
         }
 
-        //implementacion de los metodos de la Interfaces
+        // Implementacion de los metodos de la Interfaces
         public void Add(UsuarioRoles entity)
         {
             _Context.Set<UsuarioRoles>().Add(entity);
@@ -39,9 +39,9 @@ namespace Aplicacion.Repository.Generic;
         {
             var totalRegistros = await _Context.Set<UsuarioRoles>().CountAsync();
             var registros = await _Context.Set<UsuarioRoles>()
-                                                            .Skip((pageIndex - 1) * pageSize)
-                                                            .Take(pageSize)
-                                                            .ToListAsync();
+                                                .Skip((pageIndex - 1) * pageSize)
+                                                .Take(pageSize)
+                                                .ToListAsync();
 
             return (totalRegistros, registros);
         }

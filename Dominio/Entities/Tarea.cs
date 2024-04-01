@@ -1,7 +1,7 @@
 using Dominio.Entities.GenericEntities;
 
 namespace Dominio.Entities;
-    public class Tarea : BaseEntity{
+    public class Tarea : BaseEntity {
 
         public int UsuarioId { get; set; }
         public Usuario ? Usuarios { get; set; }
