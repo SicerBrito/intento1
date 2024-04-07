@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace API.Dtos.Generic;
     public class DataUserDto {
-        
+
         public string ? Message { get; set; }
         public bool IsAuthenticated { get; set; }
         public string ? UserName { get; set; }

@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services;
     public class UserService : IUserService {
-        
+
         private readonly JWT _jwt;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPasswordHasher<Usuario> _passwordHasher;
@@ -48,14 +48,13 @@ namespace API.Services;
             {
                 Email = registerDto.Email,
                 UserName = registerDto.Username,
-
             };
 
             usuario.Password = _passwordHasher.HashPassword(usuario, registerDto.Password!);
 
             var usuarioExiste = _unitOfWork.Usuarios!
-                                                .Find(u => u.UserName!.ToLower() == registerDto.Username!.ToLower())
-                                                .FirstOrDefault();
+                                            .Find(u => u.UserName!.ToLower() == registerDto.Username!.ToLower())
+                                            .FirstOrDefault();
 
             if (usuarioExiste == null)
             {
@@ -79,7 +78,6 @@ namespace API.Services;
             }
             else
             {
-
                 return $"El usuario con {registerDto.Username} ya se encuentra resgistrado.";
             }
 
@@ -90,7 +88,7 @@ namespace API.Services;
         async Task<string> IUserService.AddRoleAsync(AddRolDto model)
         {
             var usuario = await _unitOfWork.Usuarios!
-                                .GetByUsernameAsync(model.Username!);
+                                            .GetByUsernameAsync(model.Username!);
 
             if (usuario == null)
             {
@@ -108,7 +106,7 @@ namespace API.Services;
                 if (rolExiste != null)
                 {
                     var usuarioTieneRol = usuario.Roles!
-                                                .Any(u => u.Id == rolExiste.Id);
+                                                    .Any(u => u.Id == rolExiste.Id);
 
                     if (usuarioTieneRol == false)
                     {
@@ -124,7 +122,7 @@ namespace API.Services;
             }
 
             return $"Credenciales incorrectas para el ususario {usuario.UserName}.";
-        
+
         }
 
 
@@ -133,7 +131,7 @@ namespace API.Services;
         {
             DataUserDto datosUsuarioDto = new DataUserDto();
             var usuario = await _unitOfWork.Usuarios!
-                            .GetByUsernameAsync(model.Username!);
+                                            .GetByUsernameAsync(model.Username!);
 
             if (usuario == null)
             {
@@ -148,6 +146,7 @@ namespace API.Services;
                 datosUsuarioDto.IsAuthenticated = true;
                 datosUsuarioDto.Message = "OK";
                 datosUsuarioDto.IsAuthenticated = true;
+
                 if (usuario != null && usuario != null)
                 {
                     JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
@@ -155,8 +154,8 @@ namespace API.Services;
                     datosUsuarioDto.UserName = usuario.UserName;
                     datosUsuarioDto.Email = usuario.Email;
                     datosUsuarioDto.Roles = (usuario.Roles!
-                                                        .Select(p => p.Nombre)
-                                                        .ToList())!;
+                                                    .Select(p => p.Nombre)
+                                                    .ToList())!;
 
 
                     if (usuario.RefreshTokens!.Any(a => a.IsActive))
@@ -176,16 +175,16 @@ namespace API.Services;
                         }
 
                         return datosUsuarioDto;
+
                 }
                 else{
-
                     datosUsuarioDto.IsAuthenticated = false;
                     datosUsuarioDto.Message = $"Credenciales incorrectas para el usuario {usuario!.UserName}.";
 
                     return datosUsuarioDto;
                 }
             }
-            
+
             // Valor de retorno predeterminado en caso de que ninguna condición se cumpla
             return datosUsuarioDto;
 
@@ -204,12 +203,12 @@ namespace API.Services;
             }
             var claims = new[]
             {
-                    new Claim(JwtRegisteredClaimNames.Sub, usuario.UserName!),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("uid", usuario.Id.ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, usuario.UserName!),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("uid", usuario.Id.ToString())
             }
             .Union(roleClaims);
-            
+
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key!));
             Console.WriteLine("", symmetricSecurityKey);
 
@@ -231,7 +230,7 @@ namespace API.Services;
             var datosUsuarioDto = new DataUserDto();
 
             var usuario = await _unitOfWork.Usuarios!
-                            .GetByRefreshTokenAsync(refreshToken);
+                                            .GetByRefreshTokenAsync(refreshToken);
 
             if (usuario == null)
             {
@@ -248,6 +247,7 @@ namespace API.Services;
                 datosUsuarioDto.Message = $"El token no es valido.";
                 return datosUsuarioDto;
             }
+
             // Revoque el token de actualización actual y
             refreshTokenBd.Revoked = DateTime.UtcNow;
             // genera un nuevo token de actualización y lo guarda en la base de datos
@@ -262,8 +262,8 @@ namespace API.Services;
             datosUsuarioDto.Email = usuario.Email;
             datosUsuarioDto.UserName = usuario.UserName;
             datosUsuarioDto.Roles = (usuario.Roles!
-                                            .Select(u => u.Nombre)
-                                            .ToList())!;
+                                        .Select(u => u.Nombre)
+                                        .ToList())!;
             datosUsuarioDto.RefreshToken = newRefreshToken.Token;
             datosUsuarioDto.RefreshTokenExpiration = newRefreshToken.Expires;
             return datosUsuarioDto;
