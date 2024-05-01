@@ -4,8 +4,8 @@ using System.Security.Cryptography;
 using System.Text;
 using API.Dtos.Generic;
 using API.Helpers;
-using Dominio.Entities.GenericEntities;
-using Dominio.Interfaces;
+using Dominio.Entities.Generic;
+using Dominio.Interfaces.IUnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -13,14 +13,14 @@ using Microsoft.IdentityModel.Tokens;
 namespace API.Services;
     public class UserService : IUserService {
 
-        private readonly JWT _jwt;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IPasswordHasher<Usuario> _passwordHasher;
+        private readonly JWT _Jwt;
+        private readonly IUnitOfWork _UnitOfWork;
+        private readonly IPasswordHasher<Usuario> _PasswordHasher;
         public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<Usuario> passwordHasher)
         {
-            _jwt = jwt.Value;
-            _unitOfWork = unitOfWork;
-            _passwordHasher = passwordHasher;
+            _Jwt = jwt.Value;
+            _UnitOfWork = unitOfWork;
+            _PasswordHasher = passwordHasher;
         }
 
 
@@ -50,22 +50,22 @@ namespace API.Services;
                 UserName = registerDto.Username,
             };
 
-            usuario.Password = _passwordHasher.HashPassword(usuario, registerDto.Password!);
+            usuario.Password = _PasswordHasher.HashPassword(usuario, registerDto.Password!);
 
-            var usuarioExiste = _unitOfWork.Usuarios!
+            var usuarioExiste = _UnitOfWork.Usuarios!
                                             .Find(u => u.UserName!.ToLower() == registerDto.Username!.ToLower())
                                             .FirstOrDefault();
 
             if (usuarioExiste == null)
             {
-                var rolPredeterminado = _unitOfWork.Roles!
+                var rolPredeterminado = _UnitOfWork.Roles!
                                                     .Find(u => u.Nombre == Autorizacion.rol_predeterminado.ToString())
                                                     .First();
                 try
                 {
                     usuario.Roles!.Add(rolPredeterminado);
-                    _unitOfWork.Usuarios.Add(usuario);
-                    await _unitOfWork.SaveAsync();
+                    _UnitOfWork.Usuarios.Add(usuario);
+                    await _UnitOfWork.SaveAsync();
 
                     return $"El Usuario {registerDto.Username} ha sido registrado exitosamente";
                 }
@@ -87,7 +87,7 @@ namespace API.Services;
 
         async Task<string> IUserService.AddRoleAsync(AddRolDto model)
         {
-            var usuario = await _unitOfWork.Usuarios!
+            var usuario = await _UnitOfWork.Usuarios!
                                             .GetByUsernameAsync(model.Username!);
 
             if (usuario == null)
@@ -95,11 +95,11 @@ namespace API.Services;
                 return $"No existe algun usuario registrado con la cuenta olvido algun caracter?{model.Username}.";
             }
 
-            var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password!, model.Password!);
+            var resultado = _PasswordHasher.VerifyHashedPassword(usuario, usuario.Password!, model.Password!);
 
             if (resultado == PasswordVerificationResult.Success)
             {
-                var rolExiste = _unitOfWork.Roles!
+                var rolExiste = _UnitOfWork.Roles!
                                             .Find(u => u.Nombre!.ToLower() == model.Rol!.ToLower())
                                             .FirstOrDefault();
 
@@ -111,8 +111,8 @@ namespace API.Services;
                     if (usuarioTieneRol == false)
                     {
                         usuario.Roles!.Add(rolExiste);
-                        _unitOfWork.Usuarios.Update(usuario);
-                        await _unitOfWork.SaveAsync();
+                        _UnitOfWork.Usuarios.Update(usuario);
+                        await _UnitOfWork.SaveAsync();
                     }
 
                     return $"Rol {model.Rol} agregado a la cuenta {model.Username} de forma exitosa.";
@@ -130,7 +130,7 @@ namespace API.Services;
         public async Task<DataUserDto> GetTokenAsync(LoginDto model)
         {
             DataUserDto datosUsuarioDto = new DataUserDto();
-            var usuario = await _unitOfWork.Usuarios!
+            var usuario = await _UnitOfWork.Usuarios!
                                             .GetByUsernameAsync(model.Username!);
 
             if (usuario == null)
@@ -140,7 +140,7 @@ namespace API.Services;
                 return datosUsuarioDto;
             }
 
-            var result = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password!, model.Password!);
+            var result = _PasswordHasher.VerifyHashedPassword(usuario, usuario.Password!, model.Password!);
             if (result == PasswordVerificationResult.Success)
             {
                 datosUsuarioDto.IsAuthenticated = true;
@@ -170,8 +170,8 @@ namespace API.Services;
                             datosUsuarioDto.RefreshToken = refreshToken.Token;
                             datosUsuarioDto.RefreshTokenExpiration = refreshToken.Expires;
                             usuario.RefreshTokens!.Add(refreshToken);
-                            _unitOfWork.Usuarios.Update(usuario);
-                            await _unitOfWork.SaveAsync();
+                            _UnitOfWork.Usuarios.Update(usuario);
+                            await _UnitOfWork.SaveAsync();
                         }
 
                         return datosUsuarioDto;
@@ -209,15 +209,15 @@ namespace API.Services;
             }
             .Union(roleClaims);
 
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key!));
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_Jwt.Key!));
             Console.WriteLine("", symmetricSecurityKey);
 
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
             var JwtSecurityToken = new JwtSecurityToken(
-                issuer : _jwt.Issuer,
-                audience : _jwt.Audience,
+                issuer : _Jwt.Issuer,
+                audience : _Jwt.Audience,
                 claims : claims,
-                expires : DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
+                expires : DateTime.UtcNow.AddMinutes(_Jwt.DurationInMinutes),
                 signingCredentials : signingCredentials);
 
             return JwtSecurityToken;
@@ -229,7 +229,7 @@ namespace API.Services;
         {
             var datosUsuarioDto = new DataUserDto();
 
-            var usuario = await _unitOfWork.Usuarios!
+            var usuario = await _UnitOfWork.Usuarios!
                                             .GetByRefreshTokenAsync(refreshToken);
 
             if (usuario == null)
@@ -253,8 +253,8 @@ namespace API.Services;
             // genera un nuevo token de actualización y lo guarda en la base de datos
             var newRefreshToken = CreateRefreshToken();
             usuario.RefreshTokens!.Add(newRefreshToken);
-            _unitOfWork.Usuarios.Update(usuario);
-            await _unitOfWork.SaveAsync();
+            _UnitOfWork.Usuarios.Update(usuario);
+            await _UnitOfWork.SaveAsync();
             // Generar un nuevo Json Web Token
             datosUsuarioDto.IsAuthenticated = true;
             JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
@@ -278,9 +278,9 @@ namespace API.Services;
             usuario.Id = model.Id;
             usuario.UserName = model.UserName;
             usuario.Email = model.Email;
-            usuario.Password = _passwordHasher.HashPassword(usuario, model.Password!);
-            _unitOfWork.Usuarios!.Update(usuario);
-            await _unitOfWork.SaveAsync();
+            usuario.Password = _PasswordHasher.HashPassword(usuario, model.Password!);
+            _UnitOfWork.Usuarios!.Update(usuario);
+            await _UnitOfWork.SaveAsync();
             return usuario;
         }
 

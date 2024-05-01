@@ -1,4 +1,4 @@
-using Dominio.Entities.GenericEntities;
+using Dominio.Entities.Generic;
 
 namespace Dominio.Interfaces.Generic;
     public interface IUsuario : IGenericRepository<Usuario> {

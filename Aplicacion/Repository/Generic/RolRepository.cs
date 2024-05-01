@@ -1,4 +1,4 @@
-using Dominio.Entities.GenericEntities;
+using Dominio.Entities.Generic;
 using Dominio.Interfaces;
 using Persistencia.Data;
 

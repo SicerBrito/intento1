@@ -1,5 +1,5 @@
 using API.Dtos.Generic;
-using Dominio.Entities.GenericEntities;
+using Dominio.Entities.Generic;
 
 namespace API.Services;
     public interface IUserService {

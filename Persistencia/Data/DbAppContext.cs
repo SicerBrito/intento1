@@ -1,13 +1,13 @@
 using System.Reflection;
 using Dominio.Entities;
-using Dominio.Entities.GenericEntities;
+using Dominio.Entities.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia.Data;
     public class DbAppContext : DbContext {
 
         // Constructor: Asegura que esté listo para interactuar con la base de datos
-        public DbAppContext(DbContextOptions<DbAppContext> options) : base (options){
+        public DbAppContext(DbContextOptions<DbAppContext> options) : base (options) {
 
         }
 

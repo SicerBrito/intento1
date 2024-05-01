@@ -5171,19 +5171,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "/home/camper/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Escritorio\\Sicer-NoTocarPorFavor\\Practica\\intento1\\Dominio\\Dominio.csproj",
+      "projectUniqueName": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Escritorio\\Sicer-NoTocarPorFavor\\Practica\\intento1\\Dominio\\Dominio.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Escritorio\\Sicer-NoTocarPorFavor\\Practica\\intento1\\Dominio\\obj\\",
+      "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj",
+      "packagesPath": "/home/camper/.nuget/packages/",
+      "outputPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/camper/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5245,7 +5245,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

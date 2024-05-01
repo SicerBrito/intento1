@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Aplicacion
-build_property.ProjectDir = C:\Users\ADMIN\OneDrive\Escritorio\Sicer-NoTocarPorFavor\Practica\intento1\Aplicacion\
+build_property.ProjectDir = /home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

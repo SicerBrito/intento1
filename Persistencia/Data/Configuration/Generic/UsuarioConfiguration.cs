@@ -1,4 +1,4 @@
-using Dominio.Entities.GenericEntities;
+using Dominio.Entities.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
