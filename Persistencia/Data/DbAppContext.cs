@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Persistencia.Data;
     public class DbAppContext : DbContext {
 
+        public DbAppContext(){
+        }
+        
         // Constructor: Asegura que esté listo para interactuar con la base de datos
         public DbAppContext(DbContextOptions<DbAppContext> options) : base (options) {
 
@@ -26,4 +29,14 @@ namespace Persistencia.Data;
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.EnableSensitiveDataLogging().UseMySql("Server=localhost;Port=3306;Database=myDataBase;Uid=root;Pwd=123456;", new MySqlServerVersion(new Version(8, 0, 28)));
+            }
+        }
+
     }
+
+

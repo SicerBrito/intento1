@@ -48,7 +48,7 @@ builder.Services.AddAuthorization(opts => {
 // Habilitamos la conexion a la base de datos 
 builder.Services.AddDbContext<DbAppContext>(options =>
 {
-    string ? connectionString = builder.Configuration.GetConnectionString("ConexMysqlCampus");
+    string ? connectionString = builder.Configuration.GetConnectionString("ConexMysqlHome");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

@@ -27,12 +27,7 @@ namespace Persistencia.Data.Configuration;
             
             
             
-            
-            builder.HasData(
-                new {
-                    
-                }
-            );
+
 
 
         }

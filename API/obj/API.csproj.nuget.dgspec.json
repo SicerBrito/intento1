@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/API/API.csproj": {}
+    "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\API\\API.csproj": {}
   },
   "projects": {
-    "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/API/API.csproj": {
+    "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/API/API.csproj",
+        "projectUniqueName": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/API/API.csproj",
-        "packagesPath": "/home/camper/.nuget/packages/",
-        "outputPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/API/obj/",
+        "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\paola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/camper/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/Aplicacion.csproj": {
-                "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/Aplicacion.csproj"
+              "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\Aplicacion.csproj": {
+                "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\Aplicacion.csproj"
               }
             }
           }
@@ -105,37 +107,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/Aplicacion.csproj": {
+    "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/Aplicacion.csproj",
-        "packagesPath": "/home/camper/.nuget/packages/",
-        "outputPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Aplicacion/obj/",
+        "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\Aplicacion.csproj",
+        "packagesPath": "C:\\Users\\paola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/camper/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj": {
-                "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj"
+              "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj"
               },
-              "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/Persistencia.csproj": {
-                "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/Persistencia.csproj"
+              "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -170,26 +174,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj": {
+    "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj",
-        "packagesPath": "/home/camper/.nuget/packages/",
-        "outputPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/obj/",
+        "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\paola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/camper/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -246,34 +252,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/Persistencia.csproj": {
+    "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/Persistencia.csproj",
-        "packagesPath": "/home/camper/.nuget/packages/",
-        "outputPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Persistencia/obj/",
+        "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\Persistencia.csproj",
+        "packagesPath": "C:\\Users\\paola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/camper/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj": {
-                "projectPath": "/home/camper/Escritorio/Sicer-NoTocarPorFavor/wetransfer_aa_2024-04-30_1212/intento1/Dominio/Dominio.csproj"
+              "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\paola\\Desktop\\Sicer-NoTocarPorfavor\\intento1\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -301,6 +309,12 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -322,7 +336,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
