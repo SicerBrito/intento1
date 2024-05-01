@@ -6,8 +6,7 @@ namespace Dominio.Interfaces.IUnitOfWork;
         IUsuario ? Usuarios { get; }
         IRol ? Roles { get; }
         IUsuarioRoles ? UsuarioRoles { get; }
-        ICategoria ? Categorias { get; }
-        ITarea ? Tareas { get; }
+        ICandidato ? Candidatos { get; }
 
         Task<int> SaveAsync();
 

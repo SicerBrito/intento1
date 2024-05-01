@@ -1,5 +1,7 @@
+using API.Dtos;
 using API.Dtos.Generic;
 using AutoMapper;
+using Dominio.Entities;
 using Dominio.Entities.Generic;
 
 namespace API.Profiles;
@@ -13,7 +15,8 @@ namespace API.Profiles;
             CreateMap<Usuario, UsuarioDto>()
                 .ReverseMap();
 
-            
+            CreateMap<Candidato, CandidatoDto>()
+                .ReverseMap();
 
         }
 

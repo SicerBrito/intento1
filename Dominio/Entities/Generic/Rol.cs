@@ -3,7 +3,7 @@ namespace Dominio.Entities.Generic;
         
         // Propiedades
         public string ? Nombre { get; set; }
-        public ICollection<Usuario> ? Usuarios { get; set; } = new HashSet<Usuario>();
+        public virtual ICollection<Usuario> ? Usuarios { get; set; } = new HashSet<Usuario>();
         public ICollection<UsuarioRoles> ? UsuarioRoles { get; set; }
 
     }

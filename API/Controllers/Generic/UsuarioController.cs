@@ -2,16 +2,18 @@ using API.Dtos.Generic;
 using API.Services;
 using AutoMapper;
 using Dominio.Interfaces.IUnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers.Generic;
+    
+    [Authorize]
     public class UsuarioController : BaseApiController {
 
         private readonly IUnitOfWork _UnitOfWork;
         private readonly IUserService _UserService;
         private readonly IMapper _Mapper;
 
-        
         // Constructor de las Clases
         public UsuarioController(IUnitOfWork unitOfWork, IUserService userService, IMapper mapper) {
 

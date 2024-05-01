@@ -5,9 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia.Data;
     public class DbAppContext : DbContext {
-
-        public DbAppContext(){
-        }
         
         // Constructor: Asegura que esté listo para interactuar con la base de datos
         public DbAppContext(DbContextOptions<DbAppContext> options) : base (options) {
@@ -19,8 +16,7 @@ namespace Persistencia.Data;
         public DbSet<Rol> ? Roles { get; set; } = null!;
         public DbSet<UsuarioRoles> ? UsuarioRoles { get; set; } = null!;
         public DbSet<RefreshToken> ? RefreshTokens { get; set; } = null!;
-        public DbSet<Categoria> ? Categorias { get; set; } = null!;
-        public DbSet<Tarea> ? Tareas { get; set; } = null!;
+        public DbSet<Candidato> ? Candidatos { get; set; } = null!;
 
 
         // Configurar el modelo de datos, es decir, definir cómo se mapean las entidades a las tablas de la base de datos y cómo se configuran sus relaciones y propiedades
@@ -33,7 +29,7 @@ namespace Persistencia.Data;
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.EnableSensitiveDataLogging().UseMySql("Server=localhost;Port=3306;Database=myDataBase;Uid=root;Pwd=123456;", new MySqlServerVersion(new Version(8, 0, 28)));
+                optionsBuilder.EnableSensitiveDataLogging().UseMySql("Server=localhost;Port=3306;Database=myDataBase;Uid=campus2023;Pwd=campus2023;", new MySqlServerVersion(new Version(8, 0, 28)));
             }
         }
 
