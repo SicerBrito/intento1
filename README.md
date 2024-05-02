@@ -14,12 +14,21 @@ Actualizar
 
 Consultas basicas URL
 
-- GET http://localhost:9000/api/sicer/candidato
+- GET
+```
+   http://localhost:9000/api/sicer/candidato
+```
+- GET
+```
+http://localhost:9000/api/sicer/candidato/{id}
+```
 
-- GET http://localhost:9000/api/sicer/candidato/{id}
-
-- POST http://localhost:9000/api/sicer/candidato
-    body
+- POST
+```
+http://localhost:9000/api/sicer/candidato
+```
+Body
+```
     {
     "id": 0,
     "nombreCompleto": "string",
@@ -32,11 +41,20 @@ Consultas basicas URL
     "experiencia": "string",
     "urlLinkedIn": "string"
     }
+```
 
-- PUT http://localhost:9000/api/sicer/candidato/{id}
-    Query
+
+- PUT
+```
+http://localhost:9000/api/sicer/candidato/{id}
+```
+
+Query 
+
     id
-    body
+
+Body
+```
     {
     "id": 0,
     "nombreCompleto": "string",
@@ -49,21 +67,39 @@ Consultas basicas URL
     "experiencia": "string",
     "urlLinkedIn": "string"
     }
+```
 
-- DELETE http://localhost:9000/api/sicer/candidato/{id}
+- DELETE
+```
+http://localhost:9000/api/sicer/candidato/{id}
+```
 
 Consultas basicas URL
 
-- SELECT * FROM Candidato;
-- SELECT * FROM Candidato WHERE NombreCompleto LIKE '%Nombre%';
-- SELECT * FROM Candidato WHERE IdCandidato = id;
-- UPDATE Candidato SET NombreCompleto = 'NuevoNombre' WHERE IdCandidato = id;
-- DELETE FROM Candidato WHERE IdCandidato = id;
-- SELECT * FROM Candidato WHERE Genero = 'Genero';
-- SELECT * FROM Candidato WHERE CiudadRecidencia = 'ciudad';
-- SELECT COUNT(*) FROM Candidato;
-
-genero, experiencia, cantidad de candidatos
+```
+SELECT * FROM Candidato;
+```
+```
+SELECT * FROM Candidato WHERE NombreCompleto LIKE '%Nombre%';
+```
+```
+SELECT * FROM Candidato WHERE IdCandidato = id;
+```
+```
+UPDATE Candidato SET NombreCompleto = 'NuevoNombre' WHERE IdCandidato = id;
+```
+```
+DELETE FROM Candidato WHERE IdCandidato = id;
+```
+```
+SELECT * FROM Candidato WHERE Genero = 'Genero';
+```
+```
+SELECT * FROM Candidato WHERE CiudadRecidencia = 'ciudad';
+```
+```
+SELECT COUNT(*) FROM Candidato;
+```
 
 ENPOINTS
  - Consulta #1
